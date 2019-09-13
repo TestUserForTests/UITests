@@ -4,7 +4,6 @@ import cucumber.api.java.ru.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import java.util.concurrent.TimeUnit;
 
 public class TestExecution {
@@ -53,5 +52,11 @@ public class TestExecution {
     @И("^происходит проверка вывода текста \"Все МФЦ/ТОСП\" в колонке \"Филиалы МФЦ и ТОСП\"$")
     public void textVerification() {
         driver.findElement(By.xpath("//td[contains(text(),'Все МФЦ/ТОСП')]"));
+    }
+
+    @И("^завершается работа в текущем окне браузера$")
+    public void quitFromBrowser() {
+        driver.quit();
+        driver = null;
     }
 }
